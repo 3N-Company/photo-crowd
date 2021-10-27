@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "secretpassword"
+    volumes:
+      - postgres-data:/var/lib/postgres/data
+
+  normalization:
+      image: ghcr.io/3n-company/normalisation:main
+
+  colorization:
+      image: ghcr.io/3n-company/colorisation:main
+      volumes:
+        - ./photo:/imgs
+
+  core:
+    image: ghcr.io/3n-company/geophoto_backend:latest
+    environment:
+      DB-CONNECTION-STRING: "jdbc:postgresql://postgres:5432/"
+      DB-USER: "postgres"
+      DB-PASS: "secretpassword"
+      SERVER-PORT: 8080
+      PHOTO-FOLDER: "/data"
+      NORMALIZATION-HOST: "normalization"
+      NORMALIZATION-THRESHOLD: 3
+      COLORIZATION-HOST: "colorization"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./photo:/data
+    restart: always
+    depends_on:
+      - db
+      - normalisation
+      - colorisation
+    links:
+      - db
+      - normalisation
+      - colorisation
+      # - frontend
+
+  # TODO: add frontend
+
+volumes:
+    db-data:
+    core-data:
