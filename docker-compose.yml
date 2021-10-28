@@ -13,6 +13,7 @@ services:
 
   core:
     image: ghcr.io/3n-company/pc-core:latest
+    container_name: pc-core
     environment:
       DB-CONNECTION-STRING: "jdbc:postgresql://db:5432/"
       DB-USER: "postgres"
@@ -38,6 +39,7 @@ services:
 
   frontend:
     image: ghcr.io/3n-company/pc-frontend:master
+    container_name: pc-frontend
     ports:
       - "80:3000"
 

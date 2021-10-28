@@ -22,3 +22,15 @@ docker-compose up
 ```
 
 Then simply open the [localhost](http://localhost).
+
+## Architecture
+
+This repository uses the composition of several services as show below.
+
+![Current Architecture](.github/public/architecture.png)
+
+You can found these repositories under:
+- Frontend - [3N/pc-frontend](https://github.com/3N-Company/pc-core)
+- Core - [3N/pc-core](https://github.com/3N-Company/pc-core)
+- Normalisation - [3N/pc-normalisation](https://github.com/3N-Company/normalisation)
+- Colorisation - [3N/pc-colorisation](https://github.com/3N-Company/colorisation)
