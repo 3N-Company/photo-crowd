@@ -1,7 +1,6 @@
 # Photo Crowd
 
-This application was developed for Open Data Camp 2021.
-Photo Crowd is aimed to use the power of the crow to annotate unknown odl images.
+This application was developed during the Open Data Camp 2021 hackathon. The goal of the "Photo Crowd" app is to use the power of people to annotate unknown old images. 
 
 ## Deploy
 
@@ -25,11 +24,12 @@ Then simply open the [localhost](http://localhost).
 
 ## Architecture
 
-This repository uses the composition of several services as show below.
+A microservice architecture was used for this application. This repository consists of several services, as shown below.
 
 ![Current Architecture](.github/public/architecture.png)
 
-You can found these repositories under:
+The repositories of each service listed above can be found here: 
+
 - Frontend - [3N/pc-frontend](https://github.com/3N-Company/pc-frontend)
 - Core - [3N/pc-core](https://github.com/3N-Company/pc-core)
 - Normalisation - [3N/pc-normalisation](https://github.com/3N-Company/normalisation)
