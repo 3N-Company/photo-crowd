@@ -1,11 +1,10 @@
 # Photo Crowd
 
-This application was developed during the Open Data Camp 2021 hackathon. The goal of the "Photo Crowd" app is to use the power of people to annotate unknown old images. 
+This application was developed during the Open Data Camp 2021 hackathon. The goal of the "Photo Crowd" app is to use the power of people to annotate unknown old images. See also [our presentation](./.github/public/presentation.pdf).
 
 ## Deploy
 
-You need to create two empty folders (`colorised` & `upscaled`) inside the 
-`photo` folder.
+You need to create two empty folders (`colorised` & `upscaled`) inside the `photo` folder.
 
 ```bash
 mkdir -p ./photo/colorised ./photo/upscaled
@@ -20,7 +19,7 @@ Then just simply start docker:
 docker-compose up
 ```
 
-Then simply open the [localhost](http://localhost).
+Then simply open the [localhost:80](http://localhost).
 
 ## Architecture
 
